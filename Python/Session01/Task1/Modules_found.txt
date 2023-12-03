@@ -1,0 +1,9 @@
+--found modules\functions
+	-Used in the code:
+		-zip()
+	-found during research phase:
+		-getpass
+		-os
+		-collections
+		-any()
+	
