@@ -1,4 +1,5 @@
 import webbrowser
+import os
 favourite_links= {"chatgpt":"https://chat.openai.com/",
                   "pythonorg":"https://www.python.org/",
                   "w3school":"https://www.w3schools.com/",
@@ -7,7 +8,12 @@ favourite_links= {"chatgpt":"https://chat.openai.com/",
 
 def open_link(url_key):
     url_key = favourite_links[url_key]
-    firefox_path = r"C:\Program Files\Mozilla Firefox\\firefox.exe"
+    ## one way to get the firefox path using r and \\
+    # firefox_path = r"C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+    
+    #another one is using os module \ function .join()
+    firefox_path = os.path.join("C:", "Program Files",  "Mozilla Firefox", "firefox.exe")
+
     webbrowser.register("firefox", None, webbrowser.BackgroundBrowser(firefox_path))
     try:
         webbrowser.get('firefox').open(url_key)
